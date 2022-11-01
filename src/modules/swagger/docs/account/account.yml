@@ -1,5 +1,5 @@
 paths:
-  /api/users/forgot-password:
+  /api/account/forgot-password:
     post:
       summary: Submit email address to reset the password on an account
       operationId: forgotPassword
@@ -26,9 +26,20 @@ paths:
                   message:
                     type: string
                     example: "Password reset link sent to your email account"
-  /api/users/reset-password/:id/:token:
+  /api/account/reset-password/{id}/{token}:
     post:
-      summary: Reset the password for an account
+      summary: Reset the password for an account by id and token
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: Numeric ID of the user to reset.
+        - in: path
+          name: token
+          type: string
+          required: true
+          description: Token of the user to reset.
       responses:
         "200":
           description: Password reset was successful so you can now login to the account with the new password
