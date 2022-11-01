@@ -12,14 +12,8 @@ const swaggerDocs = swaggerJsDoc({
     openapi: "3.0.0",
     servers: [
       {
-        url: `http://localhost:${PORT}`,
-        description: "Toplink local server",
-        variables: {
-          port: {
-            enum: [PORT],
-            default: PORT,
-          },
-        },
+        url: 'https://top-link-app.herokuapp.com/',
+        description: "Toplink server",
       },
     ],
     info: {
