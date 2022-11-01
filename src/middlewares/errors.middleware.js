@@ -11,5 +11,4 @@ export default (err, req, res, next) => {
     status: err.status,
     message: "InternalServerError",
   });
-  // process.exit();
 };
